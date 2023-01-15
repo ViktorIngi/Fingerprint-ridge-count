@@ -1,7 +1,4 @@
 
-setwd("D:/Geneprint/Medhondlud_gogn_Kabuki/8254")
-
-pictures<-"8254_left_index_skeleton.png"
 #The input of the function is a black and white skeletonized 
 #image (using Zhang Suen method of skeletonization).
 horizontal_ridge_count<-function(pictures){
