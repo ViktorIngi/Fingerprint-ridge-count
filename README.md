@@ -17,5 +17,12 @@ or
 ```
 ridge_count("c:/Folder/Pictures/fingerprint_image.png")
 ```
-The ouput is the count of ridge count and a plotted image with intersected points as can be seen below:
-![This is an image](test.png)
+The ouput is the count of ridge count and a plotted image with intersected points as can be seen below for horizontal_ridge_count():
+![This is an image](Screenshot 2023-01-15 174824.png)
+
+Both functions require input where two points are chose to create the line which intersected ridges wil be counted. 
+The horizontal_ridge_count requires the first point to be point who is higher on the plotted image and its the one that controls the x-axis locaiton of the line. 
+
+### Notes to to consider
+
+The ridge_count value can be biased when the slope of the line is high so visual confirmaiton is needed for accurate assesement. 
