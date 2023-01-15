@@ -1,5 +1,5 @@
 # Ridge counting code for fingerprint images
-This function package is designed to count ridge lines of binary skeletonized fingerprint images for a line between points. 
+This function package is designed to count ridge lines of binary skeletonized fingerprint images that intersect GUI chosen line between two points. 
 The function horizontal_ridge_count is for a ridge count of a horizonal line and the function ridge_count is for a sloped line. 
 
 The file ridge_count.R contains both functions and is created to for R. 
