@@ -12,19 +12,19 @@ horizontal_ridge_count<-function(pictures){
   x11()
   plot(im_orig)
   
-  #Two points are chosen which determine limits of the horizontal line which ridge
+  #Two points are chosen which determines the limits of the horizontal line where ridge
   #intersection will be counted. The first point chosen shall be the core. 
   s<-locator(n=2,type="l")
   y<-s$y
   x<-s$x
   points(round(s$x),round(s$y),col="green")
   
-  #A horizontal line is made from the choosen y-limits from descending from the
-  #the first points choosen from previous step. 
+  #A horizontal line is made from the chosen y-limits. Descending from the
+  #the first points chosen from previous step. 
   line2<-data.frame(y=seq(round(min(s$y)),round(max(s$y))))
   line2$x<-rep(round(s$x[1]),length(line2$y))
   
-  #Raw data frame is created for points of intersection and filled with the 
+  #Raw data frame is created for intersected points determined by the 
   #locations where the horizontal line has a black pixel value. 
   t<-0
   points_of_intersection<-data_frame(x=numeric(length=100),y=numeric(length=100))
@@ -44,7 +44,7 @@ horizontal_ridge_count<-function(pictures){
     
   }
   
-  #Points in "points_of_intersection" which are within 2 pixel radius
+  #Points in "points_of_intersection" that are within 2 pixel radius
   #of another another point in "points_of_intersection" are filtered out to 
   #prevent double counting. 
   points_of_intersection<-filter(points_of_intersection,x>0)
@@ -83,7 +83,7 @@ ridge_count<-function(image){
   x11()
   plot(im_orig)
   
-  #Two points are chosen which determine limits of the horizontal line which ridge
+  #Two points are chosen which determines the limits of the horizontal line where ridge
   #intersection will be counted. The first point chosen shall be the core. 
   s<-locator(n=2,type="l")
   y<-s$y
@@ -125,8 +125,8 @@ ridge_count<-function(image){
   
   
   #The location of line2 data points are checked for black pixel
-  #on the fingerprint image and documented in intersection_points. 
-  #Common y value between line2 and the fingerpint image is aproximated with 
+  #on the fingerprint image which are added to intersection_points. 
+  #Common y value between line2 and the fingerpint image is approximated with 
   #an error value of one pixel .
   intersection_points<-data_frame(x=numeric(length=100),y=numeric(length=100))
   talning<-0
@@ -144,9 +144,9 @@ ridge_count<-function(image){
     
   }
   
-  #Requirment is made that the pixel distance between intersected_points 
+  #It is required that the pixel distance between intersected_points 
   #has to be 15 or more on the x-axis and 3 or more on the y-axis. Other points
-  #are excluded
+  #are excluded to prevent false ridge counting.
   intersection_points<-filter(intersection_points,x>0)
   intersection_points<-intersection_points[order(x)]
   for(j in seq(1,(dim(intersection_points)[1]-1))){
