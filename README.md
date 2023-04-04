@@ -32,7 +32,7 @@ density("c:/Folder/Pictures/fingerprint_image.png")
 The output is the count of ridge count and a plotted image with intersected points as can be seen below for horizontal_ridge_count():
 ![This is an image](test.png)
 
-For density():
+For density() the plotted image can be seen below:
 ![This is an image](test2.png)
 
 
